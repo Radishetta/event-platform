@@ -23,14 +23,13 @@ a:hover {
 }
 
 body {
-  margin: 0px 8px;
+  margin: 0px;
   min-width: 320px;
   min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  overflow-x: hidden;
+  overflow-y: visible;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 button {
