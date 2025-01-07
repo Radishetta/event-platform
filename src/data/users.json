@@ -8,7 +8,7 @@
     "country": "UK",
     "city": "London",
     "phone": "1234567890",
-    "is_admin": false,
+    "is_admin": true,
     "is_active": true
   },
   {
