@@ -1,12 +1,38 @@
+import React, { useContext } from "react";
 import "./App.css";
+import { Events } from "./components/Events/Events";
 import { Header } from "./components/Header/Header";
+import { Logout } from "./components/Auth/Logout";
+import { userContext, UserProvider } from "./contexts/userContext";
 
-function App() {
+const AppContent = () => {
+  const { user } = useContext(userContext);
+  const AuthStack = () => {
+    <div>
+      <Header />
+      <Events />
+    </div>;
+  };
+
   return (
     <>
-      <Header />
+      {user ? (
+        <div>
+          <Logout />
+        </div>
+      ) : (
+        <div>
+          <Header />
+          <Events />
+        </div>
+      )}
     </>
   );
+};
+export default function App() {
+  return (
+    <UserProvider>
+      <AppContent />
+    </UserProvider>
+  );
 }
-
-export default App;

@@ -1,6 +1,6 @@
 import React from "react";
-import { Login } from "./Login";
-import { Signin } from "./Signin";
+import { Login } from "../../Auth/Login";
+import { Signin } from "../../Auth/Signin";
 import "../../../styles/Nav.css";
 
 export const Nav = () => {
