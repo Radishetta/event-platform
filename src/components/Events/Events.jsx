@@ -1,21 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { app } from "../../../firebaseConfig";
 import { collection, query, getDocs, where } from "firebase/firestore";
 import { getFirestore } from "firebase/firestore";
+import { EventCard } from "./EventCard";
 
 export const Events = () => {
-  // try {
-  //   const db = getFirestore(app);
+  const [events, setEvents] = useState([]);
 
-  //   const q = query(collection(db, "events"), where("location", "==", "London"));
-  //   const querySnapshot = await getDocs(q);
-  //   querySnapshot.forEach((doc) => {
-  //     // doc.data() is never undefined for query doc snapshots
-  //     console.log(doc.id, " => ", doc.data());
-  //   });
-  // } catch (e) {
-  //   console.error(e);
-  // }
+  const fetchEvents = async () => {
+    try {
+      const db = getFirestore(app);
 
-  return <div>Events</div>;
+      const eventsRef = collection(db, "events");
+      const eventsQuery = query(eventsRef, where("location", "!=", false));
+      const eventsData = await getDocs(eventsQuery);
+
+      const eventsList = eventsData.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setEvents(eventsList);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  useEffect(() => {
+    fetchEvents();
+  }, []);
+
+  return events.map((event) => {
+    return <EventCard key={event.id} {...event} />;
+  });
 };

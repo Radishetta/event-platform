@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Event = (event) => {
+export const EventCard = (event) => {
   return (
     <>
       Date: {event.date}
