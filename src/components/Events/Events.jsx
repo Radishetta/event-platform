@@ -3,6 +3,7 @@ import { app } from "../../../firebaseConfig";
 import { collection, query, getDocs, where } from "firebase/firestore";
 import { getFirestore } from "firebase/firestore";
 import { EventCard } from "./EventCard";
+import "../../styles/Events.css";
 
 export const Events = () => {
   const [events, setEvents] = useState([]);
@@ -30,6 +31,10 @@ export const Events = () => {
   }, []);
 
   return events.map((event) => {
-    return <EventCard key={event.id} {...event} />;
+    return (
+      <div key={event.id} className="event-cards">
+        <EventCard {...event} />
+      </div>
+    );
   });
 };

@@ -1,6 +1,5 @@
 import React from "react";
-import { Login } from "../../Auth/Login";
-import { Signin } from "../../Auth/Signin";
+import { Link } from "react-router-dom";
 import "../../../styles/Nav.css";
 
 export const Nav = () => {
@@ -8,10 +7,10 @@ export const Nav = () => {
     <>
       <div id="nav">
         <div id="login">
-          <Login />
+          <Link to="/login">Log in</Link>
         </div>
         <div id="signin">
-          <Signin />
+          <Link to="/signin">Sign in</Link>
         </div>
       </div>
     </>
