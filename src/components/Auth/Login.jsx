@@ -45,13 +45,16 @@ export const Login = () => {
       try {
         setIsLoading(true);
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
-        const user = userCredential.user;
-        const q = query(collection(db, "users"), where("email", "==", user.email));
-        const querySnapshot = await getDocs(q);
-        querySnapshot.forEach((doc) => {
-          setUser(doc.data());
-          AsyncStorage.setItem("user", JSON.stringify(doc.data()));
+        const userID = userCredential.user.uid;
+        const getUser = query(collection(db, "users"), where("user_id", "==", userID));
+        const querySnapshot = await getDocs(getUser);
+        const userSnap = querySnapshot.docs.map((doc) => {
+          return { id: doc.id, ...doc.data() };
         });
+
+        await AsyncStorage.setItem("user", JSON.stringify(userSnap[0]));
+        setUser(userSnap[0]);
+
         setIsLoading(false);
         closeModal();
         clearLogin();
