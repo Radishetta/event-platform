@@ -52,10 +52,15 @@ export const Signin = () => {
       const users = collection(db, "users");
       await addDoc(users, newUser);
       await AsyncStorage.setItem("user", JSON.stringify(newUser));
+
       setUser(newUser);
+
+      navigate(-1);
     } catch (error) {
-      alert("Email already exists");
-      console.error("ERROR", error);
+      if (error.message.includes("auth/invalid-email")) {
+        alert("Invalid e-mail address");
+        console.error("ERROR", error.message);
+      }
     }
   };
 

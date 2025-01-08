@@ -50,7 +50,10 @@ export const Login = () => {
 
       setIsLoading(false);
     } catch (error) {
-      console.error(error);
+      if (error.message.includes("auth/invalid-credential")) {
+        alert("Invalid e-mail or password");
+        console.error("ERROR", error.message);
+      }
     }
   };
   return (
