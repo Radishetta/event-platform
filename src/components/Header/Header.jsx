@@ -3,7 +3,7 @@ import { Nav } from "./Nav/Nav";
 import { Title } from "./Title/Title";
 import "../../styles/Header.css";
 import "../../styles/Search.css";
-import Search from "./Search/Search";
+import SearchBar from "./SearchBar/SearchBar";
 
 export const Header = () => {
   return (
@@ -16,8 +16,8 @@ export const Header = () => {
           <Nav />
         </div>
       </div>
-      <div id="search">
-        <Search />
+      <div id="search-bar">
+        <SearchBar />
       </div>
     </>
   );
