@@ -49,6 +49,7 @@ export const LogIn = () => {
       setUser(userSnap[0]);
 
       setIsLoading(false);
+      navigate(-1);
     } catch (error) {
       if (error.message.includes("auth/invalid-credential")) {
         alert("Invalid e-mail or password");

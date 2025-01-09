@@ -18,6 +18,7 @@
 body {
   margin: 0;
 }
+
 .hamburger-menu {
   --x-width: calc(var(--hamburger-height) * 1.41421356237);
 
@@ -31,10 +32,12 @@ body {
   z-index: 2;
   cursor: pointer;
 }
+
 .hamburger-menu:has(input:checked) {
   --foreground: antiquewhite;
   --background: #333;
 }
+
 .hamburger-menu:has(input:focus-visible)::before,
 .hamburger-menu:has(input:focus-visible)::after,
 .hamburger-menu input:focus-visible {
@@ -93,6 +96,7 @@ body {
   color: var(--foreground);
   max-width: 10rem;
 }
+
 a:hover {
   color: white;
   text-shadow: 1px 1px 4px white;

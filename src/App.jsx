@@ -2,11 +2,11 @@ import React, { useContext } from "react";
 import "./App.css";
 import { Events } from "./components/Events/Events";
 import { Header } from "./components/Header/Header";
-import { LogOut } from "./components/Auth/LogOut";
 import { LogIn } from "./components/Auth/LogIn";
 import { SignUp } from "./components/Auth/SignUp";
 import { userContext, UserProvider } from "./contexts/userContext";
 import { Routes, Route } from "react-router-dom";
+import { searchWithAlgolia } from "./utils/searchAlgolia.js";
 
 const AppContent = () => {
   const { user } = useContext(userContext);

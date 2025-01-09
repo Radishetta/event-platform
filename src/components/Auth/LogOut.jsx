@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { getAuth, signOut } from "firebase/auth";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { userContext } from "../../contexts/userContext";
+import { Link } from "react-router-dom";
 
 export const LogOut = () => {
   const { user, setUser } = useContext(userContext);
@@ -22,7 +23,7 @@ export const LogOut = () => {
 
   return (
     <div id="logout" onClick={handleSignOut}>
-      Log out
+      <Link to={"/"}>Log Out</Link>
     </div>
   );
 };
