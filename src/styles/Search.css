@@ -6,7 +6,7 @@ html {
 }
 
 .searchbox {
-  --target-size: 48px; /* https://web.dev/accessible-tap-targets/ */
+  --target-size: 35px; /* https://web.dev/accessible-tap-targets/ */
   --box-height: var(--target-size);
   --border-radius: calc(var(--box-height) / 2);
   --border-width: 2px;
