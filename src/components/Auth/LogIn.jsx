@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import Modal from "react-modal";
-import "../../styles/Login.css";
+import "../../styles/LogIn.css";
 import { userContext } from "../../contexts/userContext";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { getFirestore, collection, query, where, getDocs, doc } from "firebase/firestore";
@@ -9,7 +9,7 @@ import { app } from "../../../firebaseConfig";
 import { useNavigate } from "react-router-dom";
 Modal.setAppElement("#root");
 
-export const Login = () => {
+export const LogIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);

@@ -1,18 +1,60 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "../../../styles/Nav.css";
+import { userContext } from "../../../contexts/userContext";
+import { LogOut } from "../../Auth/LogOut";
 
 export const Nav = () => {
-  return (
+  const { user } = useContext(userContext);
+  return user ? (
     <>
-      <div id="nav">
-        <div id="login">
-          <Link to="/login">Log in</Link>
-        </div>
-        <div id="signin">
-          <Link to="/signin">Sign in</Link>
-        </div>
-      </div>
+      <label className="hamburger-menu">
+        <input type="checkbox" />
+      </label>
+      <aside className="sidebar">
+        <nav>
+          <div>
+            <Link to="/">Home</Link>
+          </div>
+          <div>
+            <Link to="/events">Events</Link>
+          </div>
+          <div>
+            <Link to="/about">About</Link>
+          </div>
+          <div>
+            <Link to="/contact">Contact</Link>
+          </div>
+          <div>
+            <LogOut />
+          </div>
+        </nav>
+      </aside>
+    </>
+  ) : (
+    <>
+      <label className="hamburger-menu">
+        <input type="checkbox" />
+      </label>
+      <aside className="sidebar">
+        <nav>
+          <div>
+            <Link to="/">Home</Link>
+          </div>
+          <div>
+            <Link to="/about">About</Link>
+          </div>
+          <div>
+            <Link to="/contact">Contact</Link>
+          </div>
+          <div>
+            <Link to="/login">Log In</Link>
+          </div>
+          <div>
+            <Link to="/signup">Sign Up</Link>
+          </div>
+        </nav>
+      </aside>
     </>
   );
 };

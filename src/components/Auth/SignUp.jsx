@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import "../../styles/Signin.css";
+import "../../styles/SignUp.css";
 import { useNavigate } from "react-router-dom";
 import { app } from "../../../firebaseConfig";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
@@ -7,7 +7,7 @@ import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import { userContext } from "../../contexts/userContext";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-export const Signin = () => {
+export const SignUp = () => {
   const { setUser } = useContext(userContext);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -158,7 +158,7 @@ export const Signin = () => {
           />
           <br />
           <button id="signin-btn" onClick={onSigninPress}>
-            Sign in
+            Sign up
           </button>
           <button id="back-btn" onClick={handleBackButton}>
             Back

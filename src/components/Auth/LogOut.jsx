@@ -3,7 +3,7 @@ import { getAuth, signOut } from "firebase/auth";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { userContext } from "../../contexts/userContext";
 
-export const Logout = () => {
+export const LogOut = () => {
   const { user, setUser } = useContext(userContext);
 
   const handleSignOut = () => {
@@ -22,7 +22,7 @@ export const Logout = () => {
 
   return (
     <div id="logout" onClick={handleSignOut}>
-      Logout
+      Log out
     </div>
   );
 };
