@@ -10,13 +10,13 @@ const fakeIt = async () => {
     const newEvent = {
       created_at: faker.date.recent(),
       date: faker.date.future(),
-      description: faker.lorem.paragraph(),
+      description: faker.food.description(),
       event_id: faker.string.uuid(),
       is_active: faker.datatype.boolean(),
       location: faker.location.city(),
-      picture: faker.image.url(),
+      picture: faker.image.urlPicsumPhotos(),
       time: faker.date.future(),
-      title: faker.lorem.words(),
+      title: faker.book.title(),
     };
     const events = collection(db, "events");
     await addDoc(events, newEvent);
@@ -25,4 +25,4 @@ const fakeIt = async () => {
   }
 };
 
-Array(20).fill(0).forEach(fakeIt);
+Array(9).fill(0).forEach(fakeIt);
