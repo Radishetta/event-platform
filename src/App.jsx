@@ -6,7 +6,6 @@ import { LogIn } from "./components/Auth/LogIn";
 import { SignUp } from "./components/Auth/SignUp";
 import { userContext, UserProvider } from "./contexts/userContext";
 import { Routes, Route } from "react-router-dom";
-import { searchWithAlgolia } from "./utils/searchAlgolia.js";
 
 const AppContent = () => {
   const { user } = useContext(userContext);
