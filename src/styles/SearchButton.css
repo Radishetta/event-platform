@@ -1,0 +1,23 @@
+button {
+  --target-size: 40px;
+  --box-height: var(--target-size);
+  --border-radius: calc(var(--box-height) / 2);
+  --border-width: 2px;
+  --icon-size: calc(var(--box-height) * 3 / 4);
+  --side-margin: calc(var(--border-radius) / 2);
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  height: var(--box-height);
+  width: 200px;
+  border: var(--border-width) solid var(--color-accent);
+  border-radius: var(--border-radius);
+  fill: var(--color-tertiary);
+  font-size: 1.5rem;
+  color: var(--color-secondary);
+  background: transparent;
+}

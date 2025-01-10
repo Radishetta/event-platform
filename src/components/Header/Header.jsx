@@ -2,8 +2,8 @@ import React from "react";
 import { Nav } from "./Nav/Nav";
 import { Title } from "./Title/Title";
 import "../../styles/Header.css";
-import "../../styles/Search.css";
-import SearchBar from "./SearchBar/SearchBar";
+import SearchBar from "./Search/SearchBar/SearchBar";
+import SearchButton from "./Search/SearchButton/SearchButton";
 
 export const Header = () => {
   return (
@@ -16,8 +16,9 @@ export const Header = () => {
           <Nav />
         </div>
       </div>
-      <div id="search-bar">
+      <div id="search">
         <SearchBar />
+        <SearchButton />
       </div>
     </>
   );

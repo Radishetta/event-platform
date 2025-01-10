@@ -1,7 +1,25 @@
-import React from "react";
-import "../../../styles/Search.css";
+import React, { useState } from "react";
+import "../../../../styles/SearchBar.css";
+import { searchWithAlgolia } from "../../../../utils/searchAlgolia";
 
 export default function SearchBar() {
+  const [search, setSearch] = useState("");
+
+  const handleSearchChange = (e) => {
+    setSearch(e.target.value);
+  };
+
+  const handleSearch = async () => {
+    try {
+      const results = await searchWithAlgolia(search);
+      results.forEach((result) => {
+        console.log(result.hits);
+      });
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
   return (
     <>
       <div className="searchbox">
@@ -14,6 +32,9 @@ export default function SearchBar() {
           inputMode="search"
           placeholder="Search for events"
           type="search"
+          value={search}
+          onChange={handleSearchChange}
+          onClick={handleSearch}
         />
       </div>
     </>
