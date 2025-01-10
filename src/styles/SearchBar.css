@@ -29,9 +29,9 @@
 .searchbox input[type="search"] {
   -webkit-appearance: none; /* to prevent Safari from ignoring font-size */
   appearance: none; /* standard property for compatibility */
-  color: var(--color-tertiary);
+  color: var(--color-secondary);
   font-family: var(--ff);
-  font-size: var(--p);
+  font-size: 1.5rem;
 }
 .searchbox input[type="search"]::placeholder {
   color: var(--color-secondary);
