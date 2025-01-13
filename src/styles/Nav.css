@@ -15,10 +15,6 @@
   --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
 }
 
-body {
-  margin: 0;
-}
-
 .hamburger-menu {
   --x-width: calc(var(--hamburger-height) * 1.41421356237);
 
@@ -86,7 +82,7 @@ body {
 
 .sidebar {
   transition: translate var(--animation-timing);
-  translate: 100%;
+  translate: 115%;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
   padding-left: 4px;

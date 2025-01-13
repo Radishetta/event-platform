@@ -59,23 +59,27 @@ export const LogIn = () => {
   };
   return (
     <>
-      <div id="login">
+      <div id="login-container">
         Log in
-        <form>
-          <input type="email" placeholder="Email" value={email} onChange={handleEmailChange} />
-          <input
-            placeholder="Password"
-            type="password"
-            value={password}
-            onChange={handlePasswordChange}
-          />
-        </form>
-        <button id="login-btn" onClick={onLoginPress}>
-          Log In
-        </button>
-        <button id="back-btn" onClick={handleBackButton}>
-          Back
-        </button>
+        <div className="login">
+          <form>
+            <input type="email" placeholder="Email" value={email} onChange={handleEmailChange} />
+            <input
+              placeholder="Password"
+              type="password"
+              value={password}
+              onChange={handlePasswordChange}
+            />
+          </form>
+        </div>
+        <div className="btn-container">
+          <button id="login-btn" onClick={onLoginPress}>
+            Log In
+          </button>
+          <button id="back-btn" onClick={handleBackButton}>
+            Back
+          </button>
+        </div>
       </div>
     </>
   );
